@@ -1,0 +1,241 @@
+/* --- Global & Layout --- */
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.navbar {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h1 a {
+    color: white;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* Page visibility control */
+.page.hidden {
+    display: none;
+}
+
+/* --- Buttons --- */
+
+.button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.primary {
+    background-color: #28a745;
+    color: white;
+}
+
+.secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.action-edit {
+    background-color: #ffc107;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+.action-delete {
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.action-view {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+/* --- Form Styles (Page 1) --- */
+
+.client-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.client-form input, .client-form select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.large-group {
+    grid-column: 1 / -1; /* Spans the full width */
+}
+
+.action-button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    font-size: 18px;
+    width: auto;
+}
+
+.error-message {
+    color: #dc3545;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* --- List & Search Styles (Page 2) --- */
+
+.search-bar {
+    display: flex;
+    margin: 20px 0;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+}
+
+.search-bar button {
+    border-radius: 0 5px 5px 0;
+}
+
+.client-table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Add pointer to viewable name column */
+#client-table-body td:first-child {
+    cursor: pointer;
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* --- Client View Styles (Page 3) --- */
+
+#client-details-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+#suggested-exercises {
+    list-style-type: none;
+    padding: 0;
+}
+
+#suggested-exercises li {
+    background-color: #e9ecef;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+}
+
+/* --- Responsive Design (Media Query) --- */
+
+@media (max-width: 768px) {
+    /* Hide non-critical columns on smaller screens */
+    .hide-on-mobile {
+        display: none;
+    }
+
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .navbar nav {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .button {
+        margin: 5px;
+    }
+
+    .search-bar {
+        flex-direction: column;
+    }
+
+    .search-bar input {
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    .search-bar button {
+        border-radius: 5px;
+    }
+}
